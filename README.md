@@ -2,6 +2,7 @@
 
 The [project](https://github.com/openshift-metal3/dev-scripts) installs openshift cluster in vm's that emulate baremetal nodes. 
 This text records the steps to make it work. (worked on 10/2/2020)
+Thanks to [Yuval Kashtan](https://github.com/yuvalk) for his help
 
 - get a RHEL8.1 system.
 
