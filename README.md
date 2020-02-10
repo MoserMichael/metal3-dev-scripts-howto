@@ -31,7 +31,7 @@ cat pull-secret | jq '.auths += '$ADD | jq -c >new_pull_secret
 - install some packages on the RHEL machine (as root)
 ```
    dnf update
-   dnf install gi make sudo
+   dnf install git make sudo
 ```
 
 - add a non root user
