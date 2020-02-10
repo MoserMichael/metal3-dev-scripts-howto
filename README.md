@@ -1,7 +1,18 @@
 # instructions to get going wih openshift metal3 dev-scripts
 
+The [project](https://github.com/openshift-metal3/dev-scripts) installs openshift cluster in vm's that emulate baremetal nodes. 
+This text records the steps to make it work. (worked on 10/2/2020)
+
 - get a RHEL8.1 system.
 
+- check if required disk space is present
+
+  The following command displays the available disk space
+```
+  df -h
+```
+  make sure that /opt is is a file system that has at least 80GB space.
+  (I had to make a symbolic link from /opt to /usr that had enough disk space)
 
 - Prepare the pull secret:
    open url in browser: https://cloud.redhat.com/openshift/install#pull-secret
@@ -16,15 +27,6 @@ export ADD='registry.svc.ci.openshift.org":{"auth":"c3lzdGVtLXNlcnZpY2VhY2NvdW50
                                                                                                                                                                                               
 cat pull-secret | jq '.auths += '$ADD | jq -c >new_pull_secret                                                                                                                                
 ``` 
-
-- check disk space
-
-  The following command displays the available disk space
-```
-  df -h
-```
-  make sure that /opt is is a file system that has at least 80GB space.
-  (I had to make a symbolic link from /opt to /usr that had enough disk space)
 
 - install some packages on the RHEL machine (as root)
 ```
