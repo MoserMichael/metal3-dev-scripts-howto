@@ -60,7 +60,7 @@ cat pull-secret | jq '.auths += '$ADD | jq -c . >new_pull_secret
 
 - as root: enable sudo without login
 
-  edit /etc/sudoers as root and uncomment  
+  edit /etc/sudoers as root so that the following lines are uncommented (look like this):
 
 ```
     %wheel  ALL=(ALL)       ALL                                                                                                                                                               
