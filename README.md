@@ -1,9 +1,18 @@
-# instructions to get going wih openshift metal3 dev-scripts
+# instructions to get going with openshift metal3 dev-scripts
 
 The [project](https://github.com/openshift-metal3/dev-scripts) installs openshift cluster in vm's that emulate baremetal nodes. 
 This text records the steps to make it work. (worked on 10/2/2020)
 
 - get a RHEL8.1 system.
+
+- activate the RHEL system
+
+```
+subscription-manager register
+/with the redhat user/
+
+subscription-manager attach --auto
+```
 
 - check if required disk space is present
 
@@ -90,6 +99,19 @@ export NUM_WORKERS=3
 export NUM_MASTERS=3
 ```
 
+- optional: choose a openshift image 
+
+ if you skip this step it will attempt to install the latest and greates openshift image;
+ If you require a particular image:
+
+ visit 
+
+ in config_dev.sh file add the following line
+
+```
+export OPENSHIFT_RELEASE_IMAGE=
+```
+
 - if not for the first time: clean previous attempts to run dev-script installation
 
 ```
@@ -119,5 +141,11 @@ once the bootstrap VM is bringing up the node vm's, monitor if all nodes are up.
    oc --config ./ocp/auth/kubeconfig get nodes
 ```
 
+
+watch that all pods are well (status Running or Completed with not too many restarts)
+
+````
+oc --config ./ocp/auth/kubeconfig get pods --all-namespaces`
+````
 
 
