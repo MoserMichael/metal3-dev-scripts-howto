@@ -55,7 +55,7 @@ cat pull-secret | jq '.auths += '$ADD | jq -c >new_pull_secret
 - add dev user to wheel group (so that it can use sudo)
 
 ```
-   adduser -aG wheel dev                                                                                                                                                                      
+   usermod -aG wheel dev                                                                                                                                                                      
 ```
 
 - as root: enable sudo without login
