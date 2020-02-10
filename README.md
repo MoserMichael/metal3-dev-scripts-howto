@@ -112,7 +112,7 @@ display vm's running.
   sudo virsh list
 ```
 
-once the bootstrap VM is bringing up the node vm's.
+once the bootstrap VM is bringing up the node vm's, monitor if all nodes are up.
 
 ```
    cd ~/dev-scripts
@@ -121,10 +121,3 @@ once the bootstrap VM is bringing up the node vm's.
 
 
 
-  
-   
-
-- 
-
-- 
-   
