@@ -104,12 +104,12 @@ export NUM_MASTERS=3
  if you skip this step it will attempt to install the latest and greates openshift image;
  If you require a particular image:
 
- visit 
+ visit https://openshift-release.svc.ci.openshift.org/ and choose an approved version (in green)
 
  in config_dev.sh file add the following line
 
 ```
-export OPENSHIFT_RELEASE_IMAGE=
+export OPENSHIFT_RELEASE_IMAGE='/approved version number/'
 ```
 
 - if not for the first time: clean previous attempts to run dev-script installation
