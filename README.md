@@ -118,8 +118,8 @@ export OPENSHIFT_RELEASE_IMAGE='/approved version number/'
 - if not for the first time: clean previous attempts to run dev-script installation
 
 ```
+   sudo rm -rf /opt/dev-scripts /opt/metal3-dev-env logs/*
    make clean
-   sudo rm -rf /opt/dev-scripts /opt/metal3-dev-env
 ```
 
 - run the make (takes a lot of time; i use nohup so that it will continue with the procedure if you log off)
@@ -130,6 +130,8 @@ export OPENSHIFT_RELEASE_IMAGE='/approved version number/'
 ```
 
 - monitor progress of the proceedings:
+
+follow nohup.out or files in logs/ directory
 
 
 display vm's running.
