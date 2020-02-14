@@ -154,4 +154,9 @@ watch that all pods are well (status Running or Completed with not too many rest
 oc --config ./ocp/auth/kubeconfig get pods --all-namespaces`
 ````
 
+- on the .bashrc i put in the alias (as user dev)
 
+```
+alias oc='oc --config  ~/dev-scripts/ocp/auth/kubeconfig'
+
+```
