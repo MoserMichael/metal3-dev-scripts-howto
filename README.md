@@ -110,10 +110,15 @@ export NUM_MASTERS=3
 
  visit https://openshift-release.svc.ci.openshift.org/ and choose an approved version (in green)
 
+ click on a url in green.
+
+ look for the following line and copy the /approved version/: 
+ oc adm release extract --tools /approved version/
+
  in config_dev.sh file add the following line
 
 ```
-export OPENSHIFT_RELEASE_IMAGE='/approved version number/'
+export OPENSHIFT_RELEASE_IMAGE='/approved version/'
 ```
 
 - if not for the first time: clean previous attempts to run dev-script installation
