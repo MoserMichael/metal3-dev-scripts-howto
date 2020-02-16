@@ -172,3 +172,24 @@ alias oc='oc --config  ~/dev-scripts/ocp/auth/kubeconfig'
 oc completion bash >tmp
 sudo cp tmp  /etc/bash_completion.d/oc_completion
 ```
+
+
+## looking at problems when the boot process gets stuck
+
+
+### bootstrap vm is running, but nodes don't come up.
+
+```
+    # see if bootrap vm is still running
+    sudo virsh list
+
+    #ssh to bootrap vm in dev-scripts:
+    # get ip of vm (host name for the bootstrap vm is -)
+    sudo virsh net-dhcp-leases baremetal
+
+    # ssh to bootstrap vm
+    ssh -l core /host-ip/
+
+    once on the node:
+    journalctl -b -f -u bootkube.service
+```
