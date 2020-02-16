@@ -160,3 +160,10 @@ oc --config ./ocp/auth/kubeconfig get pods --all-namespaces`
 alias oc='oc --config  ~/dev-scripts/ocp/auth/kubeconfig'
 
 ```
+
+- to add some command completion to oc
+
+```
+oc completion bash >tmp
+sudo cp tmp  /etc/bash_completion.d/oc_completion
+```
