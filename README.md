@@ -193,3 +193,12 @@ sudo cp tmp  /etc/bash_completion.d/oc_completion
     once on the node:
     journalctl -b -f -u bootkube.service
 ```
+
+### show logs on bootstrap machine
+
+
+the primary service is bootkube.service - the following script (in the dev-script dir) shows the logs of the primary service on the bootrap server.
+
+```
+./show_bootstrap_log.sh bootkube.service
+```
