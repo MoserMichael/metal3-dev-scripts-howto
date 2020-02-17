@@ -176,6 +176,7 @@ sudo cp tmp  /etc/bash_completion.d/oc_completion
 
 ## looking at problems when the boot process gets stuck
 
+dev-scripts first starts the bootstrap vm; here most critical services are run to start all the master and worker vm's.
 
 ### bootstrap vm is running, but nodes don't come up.
 
@@ -197,7 +198,7 @@ sudo cp tmp  /etc/bash_completion.d/oc_completion
 ### show logs on bootstrap machine
 
 
-the primary service is bootkube.service - the following script (in the dev-script dir) shows the logs of the primary service on the bootrap server.
+the primary service on the bootstrap vm is bootkube.service - the following script (in the dev-script dir) shows the logs of the primary service on the bootrap server.
 
 ```
 ./show_bootstrap_log.sh bootkube.service
