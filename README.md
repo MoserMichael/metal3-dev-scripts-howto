@@ -204,6 +204,8 @@ the primary service on the bootstrap vm is bootkube.service - the following scri
 ./show_bootstrap_log.sh bootkube.service
 ``` 
 
+### other tricks
+
 - a script that checks if the version listed explicitly in config_${USER}.dev is listed as green on the page: [link](https://github.com/MoserMichael/metal3-dev-scripts-howto/blob/master/check-image-listed.sh)
 
 - a command to check that all worker nodes have been provisioned correctly: 
