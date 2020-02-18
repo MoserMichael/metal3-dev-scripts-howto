@@ -206,5 +206,14 @@ the primary service on the bootstrap vm is bootkube.service - the following scri
 
 - a script that checks if the version listed explicitly in config_${USER}.dev is listed as green on the page: [link](https://github.com/MoserMichael/metal3-dev-scripts-howto/blob/master/check-image-listed.sh)
 
-- a command to check that all worker nodes have been provisioned correctly: oc get bmh -n openshift-machine-api
+- a command to check that all worker nodes have been provisioned correctly: 
 
+```
+oc get bmh -n openshift-machine-api
+```
+
+- a command to get list pods that might be having a problem
+
+```
+oc get pods -A | grep -v -E "Completed|Running"
+```
