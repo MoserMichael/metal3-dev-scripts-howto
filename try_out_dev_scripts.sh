@@ -51,7 +51,11 @@ function run_dev_script {
 	sudo virsh list 2>&1 | tee ./failures/virsh-list.${TAKE}.log
 	sudo virsh net-dhcp-leases baremetal 2>&1 | tee ./failures/virsh-dhcp.${TAKE}.log
 
-        ./show_bootstrap_log.sh bootkube.service >"./failures/bootstrap_log.fail.${TAKE}.log"
+        nohup ./show_bootstrap_log.sh bootkube.service >"./failures/bootstrap_log.fail.${TAKE}.log" 2>&1
+	sleep 2m
+	pkill show_bootstrap_log.sh
+	kill $(ps -elf | grep ssh | grep journal | awk '{ print $4 }')
+
         mv  -f make.log ./failures/nohup.fail.${TAKE}.log
         mv logs ./failures/logs_fail.${TAKE}
 
