@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# script does the following
+# - download the web page that lists valid openshift versions 
+# - extracts all 'gree' (valid) versions of a given version (variable VERSION) ;
+# - lists first the stable and then the nightly versions
+# - tries to install each version in the list; stops if any one of them succeedd in a cluster that can list its nodes; - if $(oc get nodes) returns 0 status
+
 set -ex
 
 VERSION="4.3"
