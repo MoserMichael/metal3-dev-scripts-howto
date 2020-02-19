@@ -82,7 +82,8 @@ function check_memory {
 
 
 function check_disk_space {
-    REAL_OPT=$(pwd -P /opt)
+    #REAL_OPT=$(pwd -P /opt)
+    REAL_OPT=$(readlink -f /opt)
     MOUNT_POINT=$(stat ${REAL_OPT} -c '%m')
     FREE_DISK_ON_MOUNT_POINT=$(df -h | sed '1d' | awk '{ print $6,$4 }' | grep -E "^${MOUNT_POINT}[[:space:]]" | awk '{ print $2 }')
 
