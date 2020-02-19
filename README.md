@@ -202,7 +202,28 @@ the primary service on the bootstrap vm is bootkube.service - the following scri
 
 ```
 ./show_bootstrap_log.sh bootkube.service
-``` 
+```
+
+
+### connect to the console of a failing node
+
+- need to have 'virtual machine manager' installed on the client [Link with setup instructions on fedora](https://fedoraproject.org/wiki/Get_started_with_Virtual_Machine_Manager_in_Fedora)
+
+- setup passwordless login to host
+
+```
+  ssh-copy-id -i <your_ssh_key.pub> root@dell-r640-010.dsal.lab.eng.rdu2.redhat.com 
+```
+
+- in "Virtual Machine Manager" gui
+
+```
+    -  File / Add Connection
+        -  select QUEMU / KVM
+        -  user root
+        -  host name: dell-r640-010.dsal.lab.eng.rdu2.redhat.com  
+```
+
 
 ### other tricks
 
@@ -214,7 +235,7 @@ the primary service on the bootstrap vm is bootkube.service - the following scri
 oc get bmh -n openshift-machine-api
 ```
 
-- a command to get list pods that might be having a problem
+- a command to get list of pods that might be having a problem
 
 ```
 oc get pods -A | grep -v -E "Completed|Running"
