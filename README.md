@@ -8,6 +8,7 @@ Thanks to [Yuval Kashtan](https://github.com/yuvalk) for his help
 
 - activate the RHEL system
 
+Connect to the system via ssh, in the terminal run the following command:
 ```
 subscription-manager register
 /with the redhat user/
