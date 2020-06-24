@@ -23,7 +23,12 @@ subscription-manager attach --auto
   df -h
 ```
   make sure that /opt is is a file system that has at least 80GB space.
-  (I had to make a symbolic link from /opt to /usr that had enough disk space)
+  A possible workaround would be to create a symbolic link from `/opt` to some other partition which has sufficient disk space, e.g:
+```
+cd /usr
+mkdir opt
+ln -s opt /opt
+```
 
 - Prepare the pull secret:
    open url in browser: https://cloud.redhat.com/openshift/install#pull-secret
@@ -45,7 +50,7 @@ cat pull-secret | jq '.auths += {'"$AA"' } ' | jq -c . >new_pull_secret
 - install some packages on the RHEL machine (as root)
 ```
    dnf update
-   dnf install git make sudo
+   dnf install git make sudo -y
 ```
 
 - add a non root user
