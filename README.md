@@ -23,11 +23,11 @@ subscription-manager attach --auto
   df -h
 ```
   make sure that /opt is is a file system that has at least 80GB space.
-  A possible workaround would be to create a symbolic link from `/opt` to some other partition which has sufficient disk space, e.g:
+  A possible workaround would be to create a symbolic link from `/opt` to some other partition (`/usr` for example) which has sufficient disk space, e.g:
 ```
-cd /usr
-mkdir opt
-ln -s opt /opt
+mkdir /usr/opt
+cd /
+ln -s /usr/opt opt
 ```
 
 - Prepare the pull secret:
